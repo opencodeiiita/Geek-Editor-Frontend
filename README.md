@@ -46,3 +46,5 @@ Please help us follow the best practice to make it easy for the reviewer as well
 8. Avoid duplicate PRs, if need be comment on the older PR with the PR number of the follow-up (new PR) and close the obsolete PR yourself.
 9. Be polite: Be polite to other community members.
 10. PR template should be strictly followed, else the points won’t be reflected on the leaderboard.
+
+*happy coding.*
