@@ -28,6 +28,15 @@ npm install
 npm start
 ```
 
+## How to Setup
+- Make sure your machine is having internet connection.
+- Open shell (which ever your OS support) on your PC.
+- Change drive to the location where you want your project to be copied
+- Clone it to your local setup by using command ``` git clone <repo link>```
+- Once cloned, Run the following command in the root directory of the project ```npm install```
+- After the process is completed, run the command ```npm start```
+- The website will be live on [localhost:3000](https://localhost:3000)
+
 ## Claim an Issue
 Comment on the issue. In case of no activity on the issue even after 2 days, the issue will be reassigned. If you have difficulty approaching the issue, feel free to ask on our slack channel.
 
