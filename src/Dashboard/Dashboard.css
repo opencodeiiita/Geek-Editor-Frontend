@@ -1,0 +1,240 @@
+/* //////DASHBOARD/////// */
+/*List of grid items*/
+.item1 {
+	grid-area: nav;
+}
+.item2 {
+	grid-area: main1;
+}
+.item3 {
+	grid-area: main2;
+}
+.item4 {
+	grid-area: main3;
+}
+.item5 {
+	grid-area: footer;
+}
+/*Body of html font for all text and color*/
+.dashboard {
+	font-family: sans-serif;
+	background: rgb(171, 170, 173);
+	height: 120vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/*Css grid used to style sections on page*/
+.main {
+	display: grid;
+	grid-template-areas:
+		"nav main1 main2 main3"
+		"nav footer footer footer"
+		"nav footer footer footer";
+	grid-gap: 20px;
+	background-color: rgb(207, 205, 205);
+	/* background-color: rgb(112, 109, 117); */
+	padding: 50px;
+	height: 100vh;
+
+	border-radius: 20px;
+	box-shadow: 2px 0px 41px 29px rgba(0, 0, 0, 0.83);
+	-webkit-box-shadow: 2px 0px 41px 29px rgba(0, 0, 0, 0.83);
+	-moz-box-shadow: 2px 0px 41px 29px rgba(0, 0, 0, 0.83);
+}
+/*Vertical navigation bar*/
+nav {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 30vw;
+	/* background-color: rgba(0, 0, 0, 0.3); */
+	/* background-color: linear-gradient(to right, #068106, #ff416c); */
+	background: -webkit-linear-gradient(to right, #068106, #ff416c);
+	background: linear-gradient(to right, #068106, #ff416c);
+	height: 100%;
+	border-radius: 10px;
+	box-shadow: 2px 0px 41px 5px rgba(0, 0, 0, 0.582);
+	-webkit-box-shadow: 2px 0px 41px 5px rgba(0, 0, 0, 0.582);
+	-moz-box-shadow: 2px 0px 41px 5px rgba(0, 0, 0, 0.582);
+}
+/*Review section style*/
+.reviews {
+	margin: 0;
+	padding: 0;
+	width: 17vw;
+	background-color: rgba(248, 245, 245, 0.342);
+	/* color: #f2eef5; */
+	text-align: center;
+	height: 34vh;
+	border-radius: 10px;
+}
+/*Rating section style*/
+.rating {
+	margin: 0;
+	padding: 0;
+	width: 17vw;
+	background-color: rgba(248, 245, 245, 0.342);
+	/* color: #f2eef5; */
+	text-align: center;
+	height: 34vh;
+	border-radius: 10px;
+}
+/*Sentiment section style*/
+.sentiment {
+	margin: 0;
+	padding: 0;
+	width: 17vw;
+	background-color: rgba(248, 245, 245, 0.342);
+	/* color: #f2eef5; */
+	text-align: center;
+	height: 34vh;
+	border-radius: 10px;
+}
+/*Visitor section style*/
+.visitors {
+	margin: 0;
+	padding: 0;
+	width: 54vw;
+	background-color: rgba(248, 245, 245, 0.342);
+	/* color: #f2eef5; */
+	text-align: center;
+	height: 50vh;
+	border-radius: 10px;
+}
+li {
+	display: block;
+	color: rgb(204, 204, 207);
+	padding: 8px 16px;
+	text-decoration: none;
+	text-align: center;
+}
+.personalInfo {
+	padding: 0;
+}
+
+/*Highlights the dashboard to show active style*/
+.heading {
+	/* color: rgb(255, 255, 255); */
+	font-size: 1.5rem;
+	font-weight: bold;
+	padding: 1.3rem;
+}
+.headingUsername {
+	color: rgb(255, 255, 255);
+}
+/*Adds hover effect style to nav items*/
+li:hover {
+	background-color: rgba(248, 245, 245, 0.342);
+	color: rgb(0, 0, 0);
+}
+.item:hover {
+	background-color: rgba(248, 245, 245, 0.479);
+	box-shadow: 2px 0px 41px 5px rgba(0, 0, 0, 0.582);
+	-webkit-box-shadow: 2px 0px 41px 5px rgba(0, 0, 0, 0.582);
+	-moz-box-shadow: 2px 0px 41px 5px rgba(0, 0, 0, 0.582);
+}
+.p1 {
+	font-size: 7vh;
+	color: #c20245;
+	padding: 1rem;
+}
+.heart {
+	padding-top: 2px;
+	height: 2.2rem;
+}
+/*Image style*/
+img {
+	width: 10vw;
+	border-radius: 50%;
+	border: 4px solid #434446;
+}
+canvas {
+	position: relative;
+	width: 62vw !important;
+	height: 38vh !important;
+}
+@media only screen and (max-width: 425px) {
+	/* For mobile phones: */
+	.main {
+		display: grid;
+		grid-template-areas:
+			"nav"
+			"main1"
+			"main2"
+			"main3"
+			"footer";
+		grid-gap: 20px;
+		padding: 50px;
+		background: none !important;
+	}
+	nav {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-self: center;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.3);
+		height: 100%;
+		border-radius: 10px;
+	}
+	/*Review section style*/
+	.reviews {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.3);
+		color: #f2eef5;
+		text-align: center;
+		height: 30vh;
+		border-radius: 10px;
+	}
+	/*Sentiment section style*/
+	.sentiment {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.3);
+		color: #f2eef5;
+		text-align: center;
+		height: 40vh;
+		border-radius: 10px;
+	}
+	/*Rating section style*/
+	.rating {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.3);
+		color: #f2eef5;
+		text-align: center;
+		height: 30vh;
+		border-radius: 10px;
+	}
+	.visitors {
+		margin: 0;
+		padding: 0;
+		width: 63vw;
+		background-color: rgba(0, 0, 0, 0.3);
+		color: #f2eef5;
+		text-align: center;
+		height: 30vh;
+		padding-bottom: 50px;
+
+		border-radius: 10px;
+		font-size: 24px !important;
+	}
+	canvas {
+		display: none !important;
+	}
+}

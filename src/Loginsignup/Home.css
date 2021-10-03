@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+  }
+  
+ .full {
+    /* code here */
+  }
+  
+  .h1 {
+    /* Write Code here */
+  }
+  
+  .h2 {
+    /* Write Code here */
+  }
+  
+  .p {
+    /* code here */
+  }
+  
+  .span {
+    /* Write Code here */
+  }
+  
+  .a {
+    /* code here */
+  }
+  
+  .button {
+    /* Write Code here */
+  } 
+  
+  button:active {
+    /* Write Code here */
+  }
+  
+  .button:focus {
+    /* Write Code here */
+  }
+  
+  .button #ghost1 {
+    color: black;
+    background-color: #068106;
+    border-color: #ffffff;
+  }
+  
+  #signUp {
+    color: black;
+    background-color: transparent;
+    border-color: #ffffff;
+    background-color: #068106;
+  }
+  
+  form {
+    background-color: #ffffff;
+    /* code here */
+  }
+  
+  .input {
+    background-color: #eee;
+  }
+   
+  .container {
+    background-color: #fff;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    /* code here */
+  }
+  
+  .form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+  }
+  
+  .sign-in-container {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+  }
+  
+  .container.right-panel-active .sign-in-container {
+    transform: translateX(100%);
+  }
+  
+  .sign-up-container {
+    /* code here */
+  }
+  
+  .container.right-panel-active .sign-up-container {
+    /* code here */
+  }
+  
+  @keyframes show {
+    /* code here */
+  }
+  
+  .overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+  }
+  
+  .container.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+  }
+  
+  .overlay {
+    background: #ff416c;
+    background: -webkit-linear-gradient(to right, #068106, #ff416c);
+    background: linear-gradient(to right, #068, #ff416c);
+    color: #ffffff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+  }
+  
+  .container.right-panel-active .overlay {
+    transform: translateX(50%);
+  }
+  
+  .overlay-panel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+  }
+  
+  .overlay-left {
+    transform: translateX(-20%);
+  }
+  
+  .container.right-panel-active .overlay-left {
+    transform: translateX(0);
+  }
+  
+  .overlay-right {
+    background-image: url("");
+    background-blend-mode: lighten;
+    background-size: cover;
+  
+    right: 0;
+    transform: translateX(0);
+  }
+  
+  .container.right-panel-active .overlay-right {
+    transform: translateX(20%);
+  }
+  
