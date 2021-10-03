@@ -18,6 +18,11 @@ Geek Editor is basically an online compiler, somewhat like a **codepenn** for th
 ## Tech Stack
 * ReactJs
 * Material UI
+* API - Judge0
+
+## API
+about- https://rapidapi.com/judge0-official/api/judge0-ce/  
+documentation- https://ce.judge0.com/
 
 ## Dependencies
 You need npm/yarn installed in your local machine in order to run this app.
