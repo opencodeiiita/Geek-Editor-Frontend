@@ -33,7 +33,7 @@ export default class Compiler extends Component {
 
 
 
-		/* 4. Write Code for getting errors or displaying submisison here */
+		/* 4. Write Code for getting errors or displaying submissison here */
 		
 	};
 
