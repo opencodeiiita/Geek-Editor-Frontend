@@ -7,9 +7,6 @@ import Home from "./Loginsignup/Home";
 import User from "./Components/User";
 import Compiler from "./Compiler/Compiler";
 
-import Dashboard from "./Dashboard/Dashboard";
-
-
 export default function App() {
 	return (
 		<Switch>
