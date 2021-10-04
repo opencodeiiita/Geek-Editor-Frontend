@@ -14,11 +14,9 @@ const Navbar = () => {
                   <label htmlFor="click" className="fa fa-bars menu-icon" ></label>
                  <label htmlFor="click" className="fa fa-close close-icon"></label>
                   <ul>
+                   
                     <li className="nav-item">
-                        <Link className={`${link} active`} to="/Home">Home</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className={`${link}`} to="/compiler">Compiler</Link>
+                        <Link className={`${link} active`} to="/compiler">Compiler</Link>
                     </li>
                     <li className="nav-item">
                         <Link className={`${link}`} to="/dashboard">Dashboard</Link>
