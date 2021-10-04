@@ -3,10 +3,10 @@
 ## What is Geek Editor
 
 Geek Editor is basically an online compiler, somewhat like a **codepenn** for the following coding languages:-
-- C
-- C++
-- Java
-- Python
+
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" height=80px/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" height=80px/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg" height=80px/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg" height=80px/>
 
 ### Uses
 
