@@ -23,6 +23,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+package-lock.json
 node_modules
 scripts/flow/*/.flowconfig
 .flowconfig
@@ -60,5 +61,3 @@ packages/react-devtools-extensions/.tempUserDataDir
 packages/react-devtools-inline/dist
 packages/react-devtools-shell/dist
 packages/react-devtools-scheduling-profiler/dist
-
-package-lock.json
