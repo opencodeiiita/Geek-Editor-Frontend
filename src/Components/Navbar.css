@@ -1,7 +1,6 @@
 * {
   margin: 0;
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 body {
@@ -9,17 +8,17 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 #navbar {
-  background:rgb(1, 1, 64);
+  background: rgb(1, 1, 64);
   display: flex;
   justify-content: space-between;
-  height: 50px;
+  height: 80px;
 }
-#navbar ul{
+
+#navbar ul {
   /* code here */
   margin: 15px 180px 15px 10px;
   list-style: none;
@@ -29,111 +28,117 @@ code {
   font-size: 18px;
   font-weight: 500;
 }
+
 #navbar ul li {
   /* code here */
   margin: 5px 15px;
 }
-#navbar ul li .link{
-  color:#ffffff;
+
+#navbar ul li .link {
+  color: #ffffff;
   text-decoration: none;
   padding: 8px;
   border-radius: 5px;
 }
+
 /* #navbar ul li .link:before {
   content: "";
   background: #9CF5A6;
   background: #90EE02;
 }
  */
- #navbar ul li .link:hover{
-  background-color:   #ffffff;
+
+#navbar ul li .link:hover {
+  background-color: #ffffff;
   color: black;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  
 }
-#navbar ul li .active{
-  background-color:   #ffffff;
+
+#navbar ul li .active {
+  background-color: #ffffff;
   color: black;
   text-decoration: none;
   padding: 8px;
   border-radius: 5px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  
 }
-.logo{
+
+.logo {
   width: 80px;
-  color: white;
   display: flex;
   justify-content: center;
-  align-items: center;  
-  margin: 10px;
-  font-size: 1.5rem;
+  align-items: center;
+  margin: 20px 20px 20px 40px;
 }
-#navbar .menu-icon{
+
+.logoImg {
+  border-radius: 0;
+  border: none;
+}
+
+#navbar .menu-icon {
   color: white;
   font-size: 25px;
   display: none;
-
 }
-#navbar .menu-icon:hover{
+
+#navbar .menu-icon:hover {
   cursor: pointer;
-
 }
-#navbar .close-icon{
+
+#navbar .close-icon {
   color: white;
   font-size: 25px;
   display: none;
-
 }
-#navbar .close-icon:hover{
+
+#navbar .close-icon:hover {
   cursor: pointer;
-
 }
-#click{
-display: none;
+
+#click {
+  display: none;
 }
 
 @media (max-width: 900px) {
-  #navbar .menu-icon{
+  #navbar .menu-icon {
     display: block;
     margin: 12px 45px;
   }
-   #navbar ul{
-     position: fixed;
-     margin: 0;
-     top: 50px;
-     right: -300px;
-     height: 100vh;
-     display: block;
-     width: 300px;
-     text-align: center;
-     opacity: 0.82;
-     background-color: rgb(7, 7, 39);
-     transition: all 0.2s ease;
-
-   }
-   #click:checked ~ ul{
+  #navbar ul {
+    position: fixed;
+    margin: 0;
+    top: 50px;
+    right: -300px;
+    height: 100vh;
+    display: block;
+    width: 300px;
+    text-align: center;
+    opacity: 0.82;
+    background-color: rgb(7, 7, 39);
+    transition: all 0.2s ease;
+  }
+  #click:checked~ul {
     right: 0px;
   }
-  #click:checked ~ .close-icon{
+  #click:checked~.close-icon {
     display: block;
     margin: 12px 45px;
     font-size: 30px;
   }
-  #click:checked ~ .menu-icon{
+  #click:checked~.menu-icon {
     display: none;
   }
-
-   #navbar ul li{
-      margin: 50px 0;
-   }
-   #navbar ul li .link,  #navbar ul li .active{
+  #navbar ul li {
+    margin: 50px 0;
+  }
+  #navbar ul li .link, #navbar ul li .active {
     font-size: 28px;
-    display: block ;
-   }
-   #navbar ul li .link:hover, #navbar ul li .active{
-      color: #0cbaba;
-      background:none;
-      box-shadow: none;
-   }
+    display: block;
+  }
+  #navbar ul li .link:hover, #navbar ul li .active {
+    color: #0cbaba;
+    background: none;
+    box-shadow: none;
+  }
 }
