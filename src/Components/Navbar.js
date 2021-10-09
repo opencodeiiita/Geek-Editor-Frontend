@@ -16,15 +16,17 @@ const Navbar = () => {
                 <ul>
 
                     <li className="nav-item">
-                        <Link className={`${link} active`} to="/compiler">Compiler</Link>
+                        <Link className={`${link} itemm`} to="/compiler">Compiler</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className={`${link}`} to="/dashboard">Dashboard</Link>
+                        <Link className={`${link} active itemm`} to="/dashboard">Dashboard</Link>
                     </li>
                 </ul>
             </div>
+            
         </>
     );
+
 };
 
 export default Navbar;
