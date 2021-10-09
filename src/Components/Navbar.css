@@ -65,7 +65,7 @@ code {
 }
 
 .logo {
-  width: 80px;
+  width: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,6 +75,7 @@ code {
 .logoImg {
   border-radius: 0;
   border: none;
+  width: 120px;
 }
 
 #navbar .menu-icon {
