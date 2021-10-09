@@ -17,7 +17,7 @@ code {
     background: rgb(1, 1, 64);
     display: flex;
     justify-content: space-between;
-    height: 50px;
+    height: 80px;
 }
 #navbar ul {
     /* code here */
@@ -55,14 +55,14 @@ code {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
-#navbar ul li .active {
+/* #navbar ul li .active {
   background-color: #ffffff;
   color: black;
   text-decoration: none;
-  padding: 8px;
+  padding: 18px;
   border-radius: 5px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-}
+} */
 
 .logo {
   width: 120px;
@@ -105,7 +105,7 @@ code {
 @media (max-width: 900px) {
   #navbar .menu-icon {
     display: block;
-    margin: 12px 45px;
+    margin: 28px 45px;
   }
   #navbar ul {
     position: fixed;
@@ -139,8 +139,11 @@ code {
     display: block;
   }
   #navbar ul li .link:hover, #navbar ul li .active {
-    color: #0cbaba;
+    color: white;
     background: none;
     box-shadow: none;
+  }
+  #navbar ul li .itemm:hover{
+    color: aqua;
   }
 }
