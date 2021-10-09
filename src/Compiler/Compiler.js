@@ -45,11 +45,11 @@ export default class Compiler extends Component {
                             required
                             name="solution"
                             id="source"
-                            onChange={this.input}
+                            // onChange={this.input}
                             className=" source"
-                            value={this.state.input}
+                            // value={this.state.input}
                             placeholder="Enter code here :)"
-                            readOnly="false"
+                            // readOnly="false"
                         ></textarea>
                         <button class="button-run">RUN</button>
                         <div className="languageSelector">
@@ -85,6 +85,7 @@ export default class Compiler extends Component {
                                 readonly
                                 id="output"
                                 placeholder="Output will be displayed here"
+                                readOnly="false"
                             ></textarea>
                         </div>
                     </div>
