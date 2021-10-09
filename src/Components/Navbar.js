@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import "./Navbar.css";
-import logo from '../assets/images/Logo.png';
+import logo from '../assets/images/Logo.png'; 
 const Navbar = () => {
     const [link, setLink] = useState('link');
     return (
         <>
+       
             <div id="navbar">
                 <div className="logo">
                     <img className="logoImg" src={logo} alt="Logo" />
@@ -16,13 +18,14 @@ const Navbar = () => {
                 <ul>
 
                     <li className="nav-item">
-                        <Link className={`${link} itemm`} to="/compiler">Compiler</Link>
+                        <NavLink className={`${link} itemm`} to="/compiler" activeStyle={{background: "white",color:"black" }}>Compiler</NavLink>
                     </li>
                     <li className="nav-item">
-                        <Link className={`${link} active itemm`} to="/dashboard">Dashboard</Link>
+                        <NavLink className={`${link} active itemm`} to="/dashboard"  activeStyle={{background: "white",color:"black" }}>Dashboard</NavLink>
                     </li>
                 </ul>
             </div>
+            {/* if(`${link}`==) */}
             
         </>
     );
