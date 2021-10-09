@@ -34,7 +34,6 @@ export default class Compiler extends Component {
         return (
             <>
                 <Navbar />
-
                 <div className="compiler-bg">
                     <h1>Compiler</h1>
                     <div className="hmm">

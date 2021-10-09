@@ -3,13 +3,14 @@
     /* --compiler-page-background: #fff; */
 }
 body {
-    background: var(--compiler-page-background);
+    /* background: var(--compiler-page-background); */
     /* display: flex; */
     /* align-items: center; */
 }
 .compiler-bg {
-    margin: 10px;
+    padding: 10px;
     /* background-color: var(--compiler-page-background); */
+    background: var(--compiler-page-background);
 }
 .compiler-bg > h1 {
     text-align: center;
