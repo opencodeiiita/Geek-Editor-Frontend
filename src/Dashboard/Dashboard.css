@@ -11,6 +11,7 @@
 	flex-direction: column;
 	align-items: center;
     padding: 50px;
+    
 }
 
 .main{
@@ -21,6 +22,7 @@
     padding: 20px;
     border-radius: 20px;
     background-color: rgb(211, 224, 235);
+    margin: 40px;
 }
 
 .item1{
@@ -197,4 +199,14 @@
     .other-item{       
         flex-direction: column;
     }
+}
+.background-dark{
+    background:#0c2444;
+    
+}
+.main-background-dark{
+    background-color: rgb(109 111 112);
+}
+.other-background-dark .item, .other-background-dark .visitors{
+    background-color:#dadada ;
 }

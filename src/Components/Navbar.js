@@ -3,12 +3,28 @@ import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import "./Navbar.css";
 import logo from '../assets/images/Logo.png'; 
-const Navbar = () => {
+const Navbar = (props) => {
     const [link, setLink] = useState('link');
+    const arr = ['moon', 'sun'];
+    
+    const [forMode, setForMode] = useState(`${arr[Number(props.check)]}`);
+  
+    const changemode=()=>{
+        if(forMode==='moon')
+        {  setForMode('sun');
+           props.checkfunc();
+        }
+          else 
+         {  setForMode('moon');
+            props.checkfunc();
+        }
+             
+    }
+    const mode = props.thememode;
     return (
         <>
-       
-            <div id="navbar">
+            
+            <div  className={`navbar ${mode}`}>
                 <div className="logo">
                     <img className="logoImg" src={logo} alt="Logo" />
                 </div>
@@ -25,6 +41,9 @@ const Navbar = () => {
                     </li>
                 </ul>
             </div>
+            <div className="darkmode" onClick={changemode}>
+               <i className={`fa fa-${forMode}-o ${forMode}`} ></i>  
+           </div>
             {/* if(`${link}`==) */}
             
         </>
