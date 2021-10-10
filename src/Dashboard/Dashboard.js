@@ -3,13 +3,13 @@ import Navbar from "../Components/Navbar";
 import { AiFillHeart } from "react-icons/ai";
 import "./Dashboard.css";
 
-const Dashboard = () => {
+const Dashboard = (props) => {
     return (
         <>
             <div>
-                <Navbar />
-                <div className="dashboard">
-                    <div className="main">
+            <Navbar check = {props.check} checkfunc = {props.checkfunc} thememode = {props.mode}/>
+                <div className={`dashboard background-${props.mode}`}>
+                    <div className={`main main-background-${props.mode} `}>
                         <nav className="item1">
                             <div
                                 id="img"

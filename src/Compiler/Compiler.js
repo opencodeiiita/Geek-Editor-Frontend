@@ -31,29 +31,32 @@ export default class Compiler extends Component {
     };
 
     render() {
+        let mode = this.props.mode;
+        // console.log(mode);
         return (
             <>
-                <Navbar />
-                <div className="compiler-bg">
-                    <h1>Compiler</h1>
+                <Navbar check = {this.props.check} checkfunc = {this.props.checkfunc} thememode = {mode} />
+                <div className={`compiler-bg background-${mode}`}>
+                    <h1 className={`${mode}-text`}>Compiler</h1>
                     <div className="hmm">
                         <label htmlFor="solution ">
-                            <span className="inputHeading">Code Here</span>
+                            <span className= {`${mode}-text ${mode}inputHeading `}>Code Here</span>
                         </label>
                         <textarea
                             required
                             name="solution"
                             id="source"
                             // onChange={this.input}
-                            className=" source"
+                            className={`${mode}-text source`}
                             // value={this.state.input}
                             placeholder="Enter code here :)"
+                           
                             // readOnly="false"
                         ></textarea>
                         <button class="button-run">RUN</button>
                         <div className="languageSelector">
                             <label htmlFor="tags" className="mr-1">
-                                <b className="chooseLanguage">Language:</b>
+                                <b className={`${mode}-text chooseLanguage`}>Language:</b>
                             </label>
                             <select
                                 value={this.state.language_id}
@@ -68,18 +71,19 @@ export default class Compiler extends Component {
                             </select>
                         </div>
                     </div>
-                    <div className="user-input">
+                    <div className={`${mode}-text user-input`}>
                         <span className="">User Input</span>
                         <br />
                         <textarea
-                            id="input"
+                           id="input"
+                            className={`input ${mode}-text`}
                             onChange={this.userInput}
                             placeholder="User input goes here"
                         ></textarea>
                     </div>
                     <div className="">
                         <div>
-                            <span className="">Output</span>
+                            <span className={`${mode}-text`}>Output</span>
                             <textarea
                                 readonly
                                 id="output"
