@@ -209,5 +209,7 @@ display: none;
   color: white;
 }
 
-
+a {
+  transition: background 700ms;
+}
 

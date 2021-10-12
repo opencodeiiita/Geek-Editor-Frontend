@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Compiler.css";
-import Navbar from "../Components/Navbar";
 import { ScrollSync, ScrollSyncPane } from 'react-scroll-sync';
 
 require("dotenv").config();
@@ -14,22 +13,22 @@ export default class Compiler extends Component {
             language_id: localStorage.getItem("language_Id") || 2,
             user_input: ``,
         };
-        this.myRef=React.createRef();
+        this.myRef = React.createRef();
     }
 
     handleKeyDown(evt) {
-        if(evt.keyCode===13){
+        if (evt.keyCode === 13) {
             console.log("ok");
-            var element=this.myRef.current;
-            var next=document.createElement("li");
+            var element = this.myRef.current;
+            var next = document.createElement("li");
             element.appendChild(next);
         }
-        if(evt.keyCode===8){
+        if (evt.keyCode === 8) {
             console.log("ok");
-            var ele=document.getElementById("source");
-            if(ele.value.endsWith('\n')){
-                var element=this.myRef.current;
-                if(element.lastElementChild)
+            var ele = document.getElementById("source");
+            if (ele.value.endsWith('\n')) {
+                var element = this.myRef.current;
+                if (element.lastElementChild)
                     element.removeChild(element.lastElementChild);
             }
         }
@@ -49,7 +48,7 @@ export default class Compiler extends Component {
         /* 3. Write Code for getting a submission here */
 
         /* 4. Write Code for getting errors or displaying submissison here */
-    }
+    };
 
 
     render() {
@@ -57,36 +56,35 @@ export default class Compiler extends Component {
         // console.log(mode);
         return (
             <>
-                <Navbar check = {this.props.check} checkfunc = {this.props.checkfunc} thememode = {mode} />
                 <div className={`compiler-bg background-${mode}`}>
                     <h1 className={`${mode}-text`}>Compiler</h1>
                     <div className="hmm">
                         <label htmlFor="solution ">
-                            <span className= {`${mode}-text ${mode}inputHeading `}>Code Here</span>
+                            <span className={`${mode}-text ${mode}inputHeading `}>Code Here</span>
                         </label>
                         <ScrollSync>
-                        <div className="code">
-                            <ScrollSyncPane>
-                            <ol id="line-num" class="col1" ref={this.myRef}>
-                                <li></li>
-                            </ol>
-                            </ScrollSyncPane>
-                            <ScrollSyncPane>
-                            <textarea
-                                ref={this.textRef}
-                                required
-                                name="solution"
-                                id="source"
-                                class="col1"
-                                // onChange={this.input}
-                                className={`${mode}-text source`}
-                                // value={this.state.input}
-                                placeholder="Enter code here :)"
-                                onKeyDown={this.handleKeyDown.bind(this)}
-                                // readOnly="false"
-                            ></textarea>
-                            </ScrollSyncPane>
-                        </div>
+                            <div className="code">
+                                <ScrollSyncPane>
+                                    <ol id="line-num" class="col1" ref={this.myRef}>
+                                        <li></li>
+                                    </ol>
+                                </ScrollSyncPane>
+                                <ScrollSyncPane>
+                                    <textarea
+                                        ref={this.textRef}
+                                        required
+                                        name="solution"
+                                        id="source"
+                                        class="col1"
+                                        // onChange={this.input}
+                                        className={`${mode}-text source`}
+                                        // value={this.state.input}
+                                        placeholder="Enter code here :)"
+                                        onKeyDown={this.handleKeyDown.bind(this)}
+                                    // readOnly="false"
+                                    ></textarea>
+                                </ScrollSyncPane>
+                            </div>
                         </ScrollSync>
                         <button class="button-run">RUN</button>
                         <div className="languageSelector">
@@ -110,7 +108,7 @@ export default class Compiler extends Component {
                         <span className="">User Input</span>
                         <br />
                         <textarea
-                           id="input"
+                            id="input"
                             className={`input ${mode}-text`}
                             onChange={this.userInput}
                             placeholder="User input goes here"
