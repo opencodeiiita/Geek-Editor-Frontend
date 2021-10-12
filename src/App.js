@@ -33,7 +33,7 @@ export default function App() {
         <>
             <Switch>
                 <Route exact path="/"><Home /></Route>
-                <Route path="/user"><User /></Route>
+                <Route exact path="/user"><User /></Route>
                 <Route render={({ location }) => {
                     console.log(location.key);
                     return (
