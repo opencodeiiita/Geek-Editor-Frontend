@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Compiler.css";
-import Navbar from "../Components/Navbar";
+
 
 require("dotenv").config();
 
@@ -35,7 +35,6 @@ export default class Compiler extends Component {
         // console.log(mode);
         return (
             <>
-                <Navbar check = {this.props.check} checkfunc = {this.props.checkfunc} thememode = {mode} />
                 <div className={`compiler-bg background-${mode}`}>
                     <h1 className={`${mode}-text`}>Compiler</h1>
                     <div className="hmm">

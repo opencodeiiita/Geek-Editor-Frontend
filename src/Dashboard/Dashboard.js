@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../Components/Navbar";
 import { AiFillHeart } from "react-icons/ai";
 import "./Dashboard.css";
 
@@ -7,7 +6,6 @@ const Dashboard = (props) => {
     return (
         <>
             <div>
-            <Navbar check = {props.check} checkfunc = {props.checkfunc} thememode = {props.mode}/>
                 <div className={`dashboard background-${props.mode}`}>
                     <div className={`main main-background-${props.mode} `}>
                         <nav className="item1">
