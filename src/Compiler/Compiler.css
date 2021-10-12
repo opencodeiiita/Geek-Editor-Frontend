@@ -47,7 +47,7 @@ background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
     color: #000;
     border-radius: 12px;
     padding: 5px;
-    /* overflow: hidden; */
+    overflow: auto;
 }
 #source::placeholder {
     color: #000;
@@ -156,12 +156,15 @@ button.button-run:active::before {
 .code{
     display: flex;
     font-size: 15px;
-    height: 50vh;
     
 }
 #line-num{
     height: 50vh;
     margin-top: 5px;
-    overflow-y: scroll;
+    overflow: auto;
     overflow-x: hidden;
+}
+#line-num::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
 }

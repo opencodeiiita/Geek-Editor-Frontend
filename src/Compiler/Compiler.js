@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Compiler.css";
 import Navbar from "../Components/Navbar";
+import { ScrollSync, ScrollSyncPane } from 'react-scroll-sync';
 
 require("dotenv").config();
 
@@ -63,10 +64,14 @@ export default class Compiler extends Component {
                         <label htmlFor="solution ">
                             <span className= {`${mode}-text ${mode}inputHeading `}>Code Here</span>
                         </label>
+                        <ScrollSync>
                         <div className="code">
+                            <ScrollSyncPane>
                             <ol id="line-num" class="col1" ref={this.myRef}>
                                 <li></li>
                             </ol>
+                            </ScrollSyncPane>
+                            <ScrollSyncPane>
                             <textarea
                                 ref={this.textRef}
                                 required
@@ -80,7 +85,9 @@ export default class Compiler extends Component {
                                 onKeyDown={this.handleKeyDown.bind(this)}
                                 // readOnly="false"
                             ></textarea>
+                            </ScrollSyncPane>
                         </div>
+                        </ScrollSync>
                         <button class="button-run">RUN</button>
                         <div className="languageSelector">
                             <label htmlFor="tags" className="mr-1">
