@@ -165,7 +165,6 @@ display: none;
   position: absolute;
   right: 10px;
   top: 100px;
- 
 }
 
 .moon{
@@ -184,6 +183,7 @@ display: none;
   cursor: pointer;
   border: 1px solid black;
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  transform: scale(1.1);
 }
 
 .sun{
@@ -199,7 +199,9 @@ display: none;
 .sun:hover{
   cursor: pointer;
   border: 1px solid  white;
+  background-color: black;
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  transform: scale(1.1);
  
 }
 
@@ -209,7 +211,4 @@ display: none;
   color: white;
 }
 
-a {
-  transition: background 700ms;
-}
 
