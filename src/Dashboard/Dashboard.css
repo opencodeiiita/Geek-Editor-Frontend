@@ -1,115 +1,103 @@
-/* //////DASHBOARD/////// */
-/*List of grid items*/
-.item1 {
-	grid-area: nav;
+*{
+    box-sizing: border-box;
 }
-.item2 {
-	grid-area: main1;
-}
-.item3 {
-	grid-area: main2;
-}
-.item4 {
-	grid-area: main3;
-}
-.item5 {
-	grid-area: footer;
-}
-/*Body of html font for all text and color*/
+
+/* Dashboard css */
 .dashboard {
 	font-family: sans-serif;
 	background: rgb(171, 170, 173);
 	height: 120vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
+    padding: 50px;
+    
 }
 
-/*Css grid used to style sections on page*/
-.main {
-	display: grid;
-	grid-template-areas:
-		"nav main1 main2 main3"
-		"nav footer footer footer"
-		"nav footer footer footer";
-	grid-gap: 20px;
-	background-color: rgb(207, 205, 205);
-	/* background-color: rgb(112, 109, 117); */
-	padding: 50px;
-	height: 100vh;
-
-	border-radius: 20px;
-	box-shadow: 2px 0px 41px 29px rgba(0, 0, 0, 0.83);
-	-webkit-box-shadow: 2px 0px 41px 29px rgba(0, 0, 0, 0.83);
-	-moz-box-shadow: 2px 0px 41px 29px rgba(0, 0, 0, 0.83);
+.main{
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgb(211, 224, 235);
+    margin: 40px;
 }
-/*Vertical navigation bar*/
-nav {
-	display: flex;
+
+.item1{
+    display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	align-self: center;
 	list-style-type: none;
-	margin: 0;
-	padding: 0;
 	width: 30vw;
-	/* background-color: rgba(0, 0, 0, 0.3); */
-	/* background-color: linear-gradient(to right, #068106, #ff416c); */
-	background: -webkit-linear-gradient(to right, #068106, #ff416c);
-	background: linear-gradient(to right, #068106, #ff416c);
-	height: 100%;
+    height: 95vh;
+	background-color: #29539b;
+    background-image: linear-gradient(315deg, #0e316c 0%, #4367a9 74%);
 	border-radius: 10px;
 	box-shadow: 2px 0px 41px 5px rgba(0, 0, 0, 0.582);
 	-webkit-box-shadow: 2px 0px 41px 5px rgba(0, 0, 0, 0.582);
 	-moz-box-shadow: 2px 0px 41px 5px rgba(0, 0, 0, 0.582);
 }
-/*Review section style*/
-.reviews {
-	margin: 0;
-	padding: 0;
-	width: 17vw;
-	background-color: rgba(248, 245, 245, 0.342);
-	/* color: #f2eef5; */
-	text-align: center;
-	height: 34vh;
-	border-radius: 10px;
+
+.other{
+    width: 60vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
 }
-/*Rating section style*/
-.rating {
-	margin: 0;
-	padding: 0;
-	width: 17vw;
-	background-color: rgba(248, 245, 245, 0.342);
-	/* color: #f2eef5; */
-	text-align: center;
-	height: 34vh;
-	border-radius: 10px;
+.other-item{
+    height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60vw;
+    padding: 10px;
 }
-/*Sentiment section style*/
-.sentiment {
-	margin: 0;
-	padding: 0;
-	width: 17vw;
-	background-color: rgba(248, 245, 245, 0.342);
-	/* color: #f2eef5; */
-	text-align: center;
-	height: 34vh;
-	border-radius: 10px;
+.item{
+    width: 20vw;
+    height: 100%;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 25px;
+    padding: 20px;
+    background-color: white;
+    color: #e71818;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    
 }
-/*Visitor section style*/
-.visitors {
-	margin: 0;
-	padding: 0;
-	width: 54vw;
-	background-color: rgba(248, 245, 245, 0.342);
-	/* color: #f2eef5; */
-	text-align: center;
-	height: 50vh;
-	border-radius: 10px;
+.heading{
+    color: black;
 }
-li {
+.item:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+.visitors{
+    height: 60vh;
+    width: 58vw;
+    border-radius: 15px;
+    text-align: center;
+    margin: 10px;
+    background-color: white;
+    padding: 20px;
+    min-width: 200px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+.visitors:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+.img1{
+    width: 200px;
+    height: 200px;
+    min-height: 50px;
+    border-radius: 50%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.li{
 	display: block;
 	color: rgb(204, 204, 207);
 	padding: 8px 16px;
@@ -120,9 +108,8 @@ li {
 	padding: 0;
 }
 
-/*Highlights the dashboard to show active style*/
+
 .heading {
-	/* color: rgb(255, 255, 255); */
 	font-size: 1.5rem;
 	font-weight: bold;
 	padding: 1.3rem;
@@ -131,110 +118,95 @@ li {
 	color: rgb(255, 255, 255);
 }
 /*Adds hover effect style to nav items*/
-li:hover {
+.li:hover {
 	background-color: rgba(248, 245, 245, 0.342);
 	color: rgb(0, 0, 0);
 }
-.item:hover {
-	background-color: rgba(248, 245, 245, 0.479);
-	box-shadow: 2px 0px 41px 5px rgba(0, 0, 0, 0.582);
-	-webkit-box-shadow: 2px 0px 41px 5px rgba(0, 0, 0, 0.582);
-	-moz-box-shadow: 2px 0px 41px 5px rgba(0, 0, 0, 0.582);
+#img:hover{
+   cursor: pointer;
 }
-.p1 {
-	font-size: 7vh;
-	color: #c20245;
-	padding: 1rem;
-}
-.heart {
-	padding-top: 2px;
-	height: 2.2rem;
-}
-/*Image style*/
-img {
-	width: 10vw;
-	border-radius: 50%;
-	border: 4px solid #434446;
-}
-canvas {
-	position: relative;
-	width: 62vw !important;
-	height: 38vh !important;
-}
-@media only screen and (max-width: 425px) {
-	/* For mobile phones: */
-	.main {
-		display: grid;
-		grid-template-areas:
-			"nav"
-			"main1"
-			"main2"
-			"main3"
-			"footer";
-		grid-gap: 20px;
-		padding: 50px;
-		background: none !important;
-	}
-	nav {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-self: center;
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		width: 100%;
-		background-color: rgba(0, 0, 0, 0.3);
-		height: 100%;
-		border-radius: 10px;
-	}
-	/*Review section style*/
-	.reviews {
-		margin: 0;
-		padding: 0;
-		width: 100%;
-		background-color: rgba(0, 0, 0, 0.3);
-		color: #f2eef5;
-		text-align: center;
-		height: 30vh;
-		border-radius: 10px;
-	}
-	/*Sentiment section style*/
-	.sentiment {
-		margin: 0;
-		padding: 0;
-		width: 100%;
-		background-color: rgba(0, 0, 0, 0.3);
-		color: #f2eef5;
-		text-align: center;
-		height: 40vh;
-		border-radius: 10px;
-	}
-	/*Rating section style*/
-	.rating {
-		margin: 0;
-		padding: 0;
-		width: 100%;
-		background-color: rgba(0, 0, 0, 0.3);
-		color: #f2eef5;
-		text-align: center;
-		height: 30vh;
-		border-radius: 10px;
-	}
-	.visitors {
-		margin: 0;
-		padding: 0;
-		width: 63vw;
-		background-color: rgba(0, 0, 0, 0.3);
-		color: #f2eef5;
-		text-align: center;
-		height: 30vh;
-		padding-bottom: 50px;
 
-		border-radius: 10px;
-		font-size: 24px !important;
-	}
-	canvas {
-		display: none !important;
-	}
+@media (max-width:1000px) {
+    .main{
+        flex-wrap: wrap;
+        width: 100vw;
+        padding: 0;
+    }
+    
+    .item1{
+        width: 80%;
+        height: auto;
+        padding: 10px;
+        border-radius: 20px;
+        margin-top: 8px;
+        /* flex-direction: row; */
+        padding: 10px 10px;
+        box-shadow: none;
+        
+                
+    }
+    .info{
+        padding: 20px 0;
+        font-size: 16px;
+        flex: 1;
+    }
+    .li{
+    
+        font-size: 16px;
+    }
+    .img1{
+        width: 100%;
+        height: auto;
+    }
+    .headingUsername{
+        font-size: 20px;
+        text-align: center;
+        padding: 5px;
+    }
+    .other-item{       
+        height: auto;
+        width: 80vw;
+    }
+    .item{
+        width: 200px;
+        height: 200px;
+    }
+    .visitors{
+        width: 80vw;
+    }
+   
+}
+@media (max-width:400px) {
+    .item1{
+        width: 100%;
+        height: auto; 
+        padding: 15px; 
+       
+    }
+    .visitors{
+        width: 90vw;
+    }
+   
+}
+
+@media (max-width:800px) {
+    .other-item{       
+        height: auto;
+        width: 100vw;
+    }
+}
+@media (max-width:600px) {
+    .other-item{       
+        flex-direction: column;
+    }
+}
+.background-dark{
+    background:#0c2444;
+    
+}
+.main-background-dark{
+    background-color: rgb(109 111 112);
+}
+.other-background-dark .item, .other-background-dark .visitors{
+    background-color:#dadada ;
 }
