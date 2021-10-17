@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Compiler.css";
-import { ScrollSync, ScrollSyncPane } from 'react-scroll-sync';
+import { ScrollSync, ScrollSyncPane } from "react-scroll-sync";
 
 require("dotenv").config();
 
@@ -26,14 +26,13 @@ export default class Compiler extends Component {
         if (evt.keyCode === 8) {
             console.log("ok");
             var ele = document.getElementById("source");
-            if (ele.value.endsWith('\n')) {
+            if (ele.value.endsWith("\n")) {
                 var element = this.myRef.current;
                 if (element.lastElementChild)
                     element.removeChild(element.lastElementChild);
             }
         }
-
-    };
+    }
 
     /* 1.Write Code here for taking value of input, language_id, user_input from local storage*/
 
@@ -50,79 +49,104 @@ export default class Compiler extends Component {
         /* 4. Write Code for getting errors or displaying submissison here */
     };
 
-
     render() {
         let mode = this.props.mode;
         // console.log(mode);
         return (
             <>
-                <div className={`compiler-bg background-${mode}`}>
-                    <h1 className={`${mode}-text`}>Compiler</h1>
+                <div className={`compiler-bg compiler-background-${mode} `}>
+                    <h1 className={`${mode}-text`}><span>C</span>ompiler</h1>
                     <div className="hmm">
-                        <label htmlFor="solution ">
-                            <span className={`${mode}-text ${mode}inputHeading `}>Code Here</span>
-                        </label>
-                        <ScrollSync>
-                            <div className="code">
-                                <ScrollSyncPane>
-                                    <ol id="line-num" class="col1" ref={this.myRef}>
-                                        <li></li>
-                                    </ol>
-                                </ScrollSyncPane>
-                                <ScrollSyncPane>
-                                    <textarea
-                                        ref={this.textRef}
-                                        required
-                                        name="solution"
-                                        id="source"
-                                        class="col1"
-                                        // onChange={this.input}
-                                        className={`${mode}-text source`}
-                                        // value={this.state.input}
-                                        placeholder="Enter code here :)"
-                                        onKeyDown={this.handleKeyDown.bind(this)}
-                                    // readOnly="false"
-                                    ></textarea>
-                                </ScrollSyncPane>
+                        <div className="main-container">
+                            <div className="main-left">
+                                <ScrollSync>
+                                    <div className={`code code-${mode}`}>
+                                        <ScrollSyncPane>
+                                            <ol
+                                                id="line-num"
+                                                className={`${mode}-text`}
+                                                ref={this.myRef}
+                                            >
+                                                <li></li>
+                                            </ol>
+                                        </ScrollSyncPane>
+                                        <ScrollSyncPane>
+                                            <textarea
+                                                ref={this.textRef}
+                                                required
+                                                name="solution"
+                                                id="source"
+                                                // onChange={this.input}
+                                                className={`${mode}-text source col1`}
+                                                // value={this.state.input}
+                                                placeholder="Enter code here :)"
+                                                onKeyDown={this.handleKeyDown.bind(
+                                                    this
+                                                )}
+                                                // readOnly="false"
+                                            ></textarea>
+                                        </ScrollSyncPane>
+                                    </div>
+                                </ScrollSync>
+                                <div className="compilerFotter">
+                                    <div className={`fotIcon ${mode}-icon`}>
+                                        <i className="fa fa-copy"></i>
+                                        <i className="fa fa-paste"></i>
+                                    </div>
+                                    <div className="fot-right">
+                                        <div className="languageSelector">
+                                            <select
+                                                value={this.state.language_id}
+                                                onChange={this.language}
+                                                id="tags"
+                                                className="language"
+                                            >
+                                                <option value="54">C++</option>
+                                                <option value="50">C</option>
+                                                <option value="62">Java</option>
+                                                <option value="71">
+                                                    Python
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <button class="button-run">RUN</button>
+                                    </div>
+                                </div>
                             </div>
-                        </ScrollSync>
-                        <button class="button-run">RUN</button>
-                        <div className="languageSelector">
-                            <label htmlFor="tags" className="mr-1">
-                                <b className={`${mode}-text chooseLanguage`}>Language:</b>
-                            </label>
-                            <select
-                                value={this.state.language_id}
-                                onChange={this.language}
-                                id="tags"
-                                className="language"
-                            >
-                                <option value="54">C++</option>
-                                <option value="50">C</option>
-                                <option value="62">Java</option>
-                                <option value="71">Python</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div className={`${mode}-text user-input`}>
-                        <span className="">User Input</span>
-                        <br />
-                        <textarea
-                            id="input"
-                            className={`input ${mode}-text`}
-                            onChange={this.userInput}
-                            placeholder="User input goes here"
-                        ></textarea>
-                    </div>
-                    <div className="">
-                        <div>
-                            <span className={`${mode}-text`}>Output</span>
-                            <textarea
-                                readonly
-                                id="output"
-                                placeholder="Output will be displayed here"
-                                readOnly="false"
-                            ></textarea>
+                            <div className="main-right">
+                                <div
+                                    className={`${mode}-text user  user-input`}
+                                >
+                                    <div className="user-head">
+                                        <h2>Input</h2>
+                                        <div className={`headicon ${mode}-icon`}>
+                                            <i className="fa fa-copy"></i>
+                                            <i className="fa fa-paste"></i>
+                                        </div>
+                                    </div>
+                                    <textarea
+                                        id="input"
+                                        className={`Input ${mode}-text ${mode}-textarea`}
+                                        onChange={this.userInput}
+                                        placeholder="1 2 3 4 5"
+                                    ></textarea>
+                                </div>
+                                <div className=" user user-output">
+                                    <div className="user-head">
+                                        <h2>Output</h2>
+                                        <div className={`headicon ${mode}-icon`}>
+                                            <i className="fa fa-copy"></i>
+                                        </div>
+                                    </div>
+                                    <textarea
+                                        readonly
+                                        id="output"
+                                        className={`Output ${mode}-text ${mode}-textarea`}
+                                        placeholder="Output will be displayed here"
+                                        readOnly="false"
+                                    ></textarea>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
