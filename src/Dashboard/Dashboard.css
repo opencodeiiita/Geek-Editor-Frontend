@@ -4,8 +4,8 @@
 
 /* Dashboard css */
 .dashboard {
-	font-family: sans-serif;
-	background: rgb(171, 170, 173);
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background: #edeff1;
 	height: 120vh;
 	display: flex;
 	flex-direction: column;
@@ -21,7 +21,7 @@
     justify-content: center;
     padding: 20px;
     border-radius: 20px;
-    background-color: rgb(211, 224, 235);
+    background-color: #e4e6ea;
     margin: 40px;
 }
 
@@ -33,12 +33,10 @@
 	list-style-type: none;
 	width: 30vw;
     height: 95vh;
-	background-color: #29539b;
-    background-image: linear-gradient(315deg, #0e316c 0%, #4367a9 74%);
+    color:#6d6a89;
+	background-color: #cdced7;
 	border-radius: 10px;
-	box-shadow: 2px 0px 41px 5px rgba(0, 0, 0, 0.582);
-	-webkit-box-shadow: 2px 0px 41px 5px rgba(0, 0, 0, 0.582);
-	-moz-box-shadow: 2px 0px 41px 5px rgba(0, 0, 0, 0.582);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 .other{
@@ -64,24 +62,25 @@
     text-align: center;
     font-size: 25px;
     padding: 20px;
-    background-color: white;
-    color: #e71818;
+    background-color: #cdced7;
+    color: #6d6a89;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     
 }
 .heading{
-    color: black;
+    color: #6d6a89;
+    font-size: 1.5em;
 }
 .item:hover{
     box-shadow: 0 0 11px rgba(33,33,33,.2); 
 }
 .visitors{
-    height: 60vh;
+    min-height: 60vh;
     width: 58vw;
     border-radius: 15px;
     text-align: center;
     margin: 10px;
-    background-color: white;
+    background-color: #cdced7;
     padding: 20px;
     min-width: 200px;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
@@ -97,33 +96,75 @@
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
-.li{
+li{
 	display: block;
-	color: rgb(204, 204, 207);
-	padding: 8px 16px;
+    color: #6d6a89;
+	padding: 5px 5px;
 	text-decoration: none;
-	text-align: center;
+	text-align: left;
+    font-size: 1.2em;
+    font-weight:bold;
+}
+.li1{
+    font-size: 1em;
 }
 .personalInfo {
 	padding: 0;
 }
-
+.info{
+    text-align: center;
+}
 
 .heading {
-	font-size: 1.5rem;
+	font-size: 1em;
 	font-weight: bold;
 	padding: 1.3rem;
 }
 .headingUsername {
-	color: rgb(255, 255, 255);
+	color: #6d6a89;
+    font-size: 2em;
+    font-weight:bold;
+    margin-top: 0.5em;
+}
+.savedcodes{
+    font-size: 2em;
 }
 /*Adds hover effect style to nav items*/
 .li:hover {
 	background-color: rgba(248, 245, 245, 0.342);
-	color: rgb(0, 0, 0);
+	color:  #6d6a89;
 }
 #img:hover{
    cursor: pointer;
+}
+
+.box{
+    margin: 10px;
+    width: 30%;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 25px;
+    padding: 20px;
+    background-color: rgb(177, 177, 192);
+    color: #6d6a89;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+.code{
+    font-size: 0.8em;
+	font-weight: bold;
+	padding: 0.5rem 0;
+}
+.scodeflex{
+    display:flex;
+    flex-wrap:wrap ;
+    flex-direction: row;
+}
+.t1{
+    font-size: 0.6em;
+}
+.p1{
+    font-weight: bold;
+    vertical-align: middle;
 }
 
 @media (max-width:1000px) {
@@ -178,13 +219,25 @@
 }
 @media (max-width:400px) {
     .item1{
-        width: 100%;
+        width: 80%;
         height: auto; 
         padding: 15px; 
-       
     }
     .visitors{
         width: 90vw;
+    }
+    .scodeflex{
+        flex-direction: column;
+        align-items: center;
+    }
+    .box{
+        width:90%;
+    }
+    #img{
+        width:80%;
+    }
+    .item2{
+        width:85%;
     }
    
 }
@@ -201,12 +254,31 @@
     }
 }
 .background-dark{
-    background:#0c2444;
-    
+    background:#2d104b;
 }
 .main-background-dark{
-    background-color: rgb(109 111 112);
+    background-color: #391f56;
 }
+.main-background-dark .item1, .main-background-dark .item2, .main-background-dark .item5{
+    background-color: rgb(98, 81, 123);
+    color:rgb(168, 145, 200);
+}
+.main-background-dark li, .main-background-dark p, .main-background-dark .heading{
+    color:rgb(168, 145, 200);
+}
+.main-background-dark .li:hover{
+    color:rgb(89, 71, 115);
+    background-color: rgb(168, 145, 200);
+}
+.main-background-dark .item3{
+    background-color: rgb(89, 71, 115);
+    color:rgb(168, 145, 200);
+}
+
 .other-background-dark .item, .other-background-dark .visitors{
-    background-color:#dadada ;
+    background-color:rgb(98, 81, 123) ;
+}
+.text-dark{
+    color:rgb(168, 145, 200);
+    background-color: rgb(98, 81, 123);
 }
