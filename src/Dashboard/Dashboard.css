@@ -166,7 +166,7 @@ li{
     vertical-align: middle;
 }
 .main{
-    padding-bottom: 10em;
+    padding-bottom: 1em;
 }
 @media (max-width:1000px) {
     .main{
