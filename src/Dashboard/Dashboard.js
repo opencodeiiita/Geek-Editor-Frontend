@@ -58,7 +58,7 @@ const Dashboard = (props) => {
                                 </p>
                                 <div className="scodeflex">
                                 <div className="item3 scode1 box">
-                                    <p class="code">C++</p>
+                                    <p class="lang">C++</p>
                                     <p className="t1">
                                         Bubble Sort Algo
                                     </p>
@@ -70,7 +70,7 @@ const Dashboard = (props) => {
                                     </p>
                                 </div>
                                 <div className="item3 scode1 box">
-                                    <p class="code">C++</p>
+                                    <p class="lang">C++</p>
                                     <p className="t1">
                                         Merge Sort Algo
                                     </p>
@@ -82,7 +82,7 @@ const Dashboard = (props) => {
                                     </p>
                                 </div>
                                 <div className="item3 scode1 box">
-                                    <p class="code">C++</p>
+                                    <p class="lang">C++</p>
                                     <p className="t1">
                                         Quick Sort Algo
                                     </p>
