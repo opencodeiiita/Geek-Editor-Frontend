@@ -18,6 +18,7 @@ code {
   display: flex;
   justify-content: space-between;
   height: 80px;
+  transition: all 0.8s ease 0s;
 }
 .navbar ul {
   /* code here */
@@ -165,6 +166,7 @@ display: none;
   position: absolute;
   right: 10px;
   top: 100px;
+  transition: all 0.8s ease;
 }
 
 .moon{
@@ -195,14 +197,21 @@ display: none;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   background-color: white;
   color: orange;
+
 }
 .sun:hover{
   cursor: pointer;
   border: 1px solid  white;
   background-color: black;
-  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  /* box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset; */
   transform: scale(1.1);
  
+}
+.darkmode>.fa{
+  transition: transform 2s ease 0s;
+}
+.darkmode>.fa:hover{
+  transform: rotate(360deg);
 }
 
 /* dark mode theme */

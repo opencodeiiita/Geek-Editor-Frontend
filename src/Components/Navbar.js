@@ -27,7 +27,9 @@ const Navbar = (props) => {
             <div  className={`navbar ${mode}`}>
                 <div className="logo">
                     <img className="logoImg" src={logo} alt="Logo" />
+
                 </div>
+                
                 <input type="checkbox" id="click" />
                 <label htmlFor="click" className="fa fa-bars menu-icon" ></label>
                 <label htmlFor="click" className="fa fa-close close-icon"></label>
