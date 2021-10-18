@@ -6,7 +6,6 @@
 .dashboard {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	background: #edeff1;
-	height: 120vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -166,7 +165,9 @@ li{
     font-weight: bold;
     vertical-align: middle;
 }
-
+.main{
+    padding-bottom: 10em;
+}
 @media (max-width:1000px) {
     .main{
         flex-wrap: wrap;
@@ -182,9 +183,7 @@ li{
         margin-top: 8px;
         /* flex-direction: row; */
         padding: 10px 10px;
-        box-shadow: none;
-        
-                
+        box-shadow: none;        
     }
     .info{
         padding: 20px 0;
@@ -224,7 +223,7 @@ li{
         padding: 15px; 
     }
     .visitors{
-        width: 90vw;
+        width: 80vw;
     }
     .scodeflex{
         flex-direction: column;
@@ -251,6 +250,15 @@ li{
 @media (max-width:600px) {
     .other-item{       
         flex-direction: column;
+    }
+    .box{
+        width:90%;
+    }
+    .item2{
+        width:85%;
+    }
+    #img{
+        width:80%;
     }
 }
 .background-dark{
