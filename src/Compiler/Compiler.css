@@ -77,11 +77,12 @@ Compiler section desgin
 }
 
 #line-num{
-    height: 50vh;
+    height: 100%;
     font-family: monospace;
-    margin-top: 5px;
     overflow: auto;
-    /* overflow-x: hidden; */
+    border-radius: 20px 0 0 20px;
+    background: transparent;
+    overflow-x: hidden;
 }
 #line-num::-webkit-scrollbar {
     width: 0;  /* Remove scrollbar space */
