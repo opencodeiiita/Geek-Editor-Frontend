@@ -75,18 +75,26 @@ Compiler section desgin
 #source::placeholder {
     color: #000;
 }
+
 #line-num{
-    height: 100%;
+    height: 50vh;
     font-family: monospace;
+    margin-top: 5px;
     overflow: auto;
-    border-radius: 20px 0 0 20px;
-    background: transparent;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 #line-num::-webkit-scrollbar {
     width: 0;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */
+} 
+
+ol li{
+    display: list-item;
+    list-style: decimal;
+
+    list-style-position: inside;
 }
+
 
 /*
 ===================================================
