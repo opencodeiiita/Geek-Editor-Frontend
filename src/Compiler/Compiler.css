@@ -65,7 +65,7 @@ Compiler section desgin
     width: 100%;
     background: transparent;
     height: 60vh;
-    font-size: 15px;
+    font-size: 18px;
     resize: none;
     outline: none;
     font-family: monospace;
@@ -75,6 +75,7 @@ Compiler section desgin
 #source::placeholder {
     color: #000;
 }
+
 #line-num{
     height: 100%;
     font-family: monospace;
@@ -86,7 +87,13 @@ Compiler section desgin
 #line-num::-webkit-scrollbar {
     width: 0;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */
+} 
+
+ol li{
+    display: list-item;
+    padding: 0;
 }
+
 
 /*
 ===================================================
