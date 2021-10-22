@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import "./Footer.css";
 import logo from '../assets/images/Logo.png'; 
+import Git from '../assets/images/Github.png'; 
+import Twitter from '../assets/images/Twitter.png'; 
+import Facebook from '../assets/images/Facebook.png'; 
+
 const Footer = (props) => {
 
     return (
@@ -19,9 +23,9 @@ const Footer = (props) => {
               <br/>
               <br/>
               <div className="media-icons">
-                <img src="../assets/images/Facebook.png" className="fa fa-facebook"/>
-                <img src="../assets/images/Twitter.png" className="fa fa-twitter"/>
-                <img src="../assets/images/Github.png" className="fa fa-instagram"/>
+                <img src="../assets/images/Facebook.png" src={Facebook}/>
+                <img src="../assets/images/Twitter.png" src={Twitter}/>
+                <img src="../assets/images/Github.png" src={Git}/>
                 
                 
               </div>
@@ -64,7 +68,7 @@ const Footer = (props) => {
               <div className="bottom_text">
                 <span className="copyright_text">Copyright©2021 <Link to='/https://geek-editor-frontend.herokuapp.com/compiler'>Geek Editor.</Link> </span>
                 <span className="policy_terms">                
-                  <img src="../assets/images/Logo.png" height="100" alt="Logo"/>
+                  <img src={logo} height="55" alt="Logo"/>
                 </span>
               </div>
             </div>
