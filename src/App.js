@@ -8,6 +8,7 @@ import User from "./Components/User";
 import Compiler from "./Compiler/Compiler";
 import Dashboard from "./Dashboard/Dashboard";
 import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 export default function App() {
     const [check, setCheck] = useState('0');
     let [mode, setMode] = useState('light');
@@ -46,10 +47,12 @@ export default function App() {
                                     timeout={500}>
                                     <Switch>
                                         <Route exact path="/compiler" children={<Compiler check={check} checkfunc={checkfunc} mode={mode} />}></Route>
-                                        <Route exact path="/dashboard" children={<Dashboard check={check} checkfunc={checkfunc} mode={mode} />}></Route>
+                                        <Route exact path="/dashboard" children={<Dashboard check={check} checkfunc={checkfunc} mode={mode}/>}></Route>
                                     </Switch>
+                                    
                                 </CSSTransition>
-                            </TransitionGroup>
+                            </TransitionGroup> 
+                            <Footer/>
                         </>);
                 }} />
 
