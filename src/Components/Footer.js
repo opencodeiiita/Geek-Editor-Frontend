@@ -7,73 +7,64 @@ const Footer = (props) => {
 
     return (
         <footer>
-          <div class="content">
-            <div class="top">
-              <div class="logo-details">
-                <h1 class="logo_name">OpenCode'21</h1>
+          <div className="content">
+            <div className="top">
+              <div className="logo-details">
+                <h1 className="logo_name">OpenCode'21</h1>
               <br/>
               <br/>
-                <p class="para">A month-long program starting in October for students to start their journey in the world of open source.
+                <p className="para">A month-long program starting in October for students to start their journey in the world of open source.
                   The Only requirement being an enthusiastic heart to learn.</p>
               </div>
               <br/>
               <br/>
-              <div class="media-icons">
-                <img src="./Facebook.png" class="fa fa-facebook"></img>
-                <img src="./twitter.png" class="fa fa-twitter"></img>
-                <img src="./Github.png" class="fa fa-instagram"></img>
+              <div className="media-icons">
+                <img src="../assets/images/Facebook.png" className="fa fa-facebook"/>
+                <img src="../assets/images/Twitter.png" className="fa fa-twitter"/>
+                <img src="../assets/images/Github.png" className="fa fa-instagram"/>
                 
                 
               </div>
             </div>
-            <div class="link-boxes">
-              <ul class="box" id="box2" >
-                <li class="link_name" id="c1">CONTACT US :</li>
-                <div><li><a href="#">Priyal Saxena : iec2020123@iiita.ac.in</a></li></div>
-                <hr>
-                <div><li><a href="#">Mudit Agarwal : iit2020092@iiita.ac.in</a></li></div>
-                <hr>
-                <div><li><a href="#">Akshaj Kansal : iit2020245@iiita.ac.in</a></li></div>
+            <div className="link-boxes">
+              <ul className="Mentors" id="Email" >
+                <li className="link_name" id="c1">CONTACT US :</li>
+                <div><li><Link to='#'>Priyal Saxena : iec2020123@iiita.ac.in</Link></li></div>
+                <hr/>
+                <div><li><Link to='#'>Mudit Agarwal : iit2020092@iiita.ac.in</Link></li></div>
+                <hr/>
+                <div><li><Link to='/#'>Akshaj Kansal : iit2020245@iiita.ac.in</Link></li></div>
                 
               </ul>
-              <ul class="box" id="box1">
-                <li class="link_name">EXPLORE</li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Team</a></li>
-                
-              
-              </ul>
-              <ul class="box" >
-                <li class="link_name">LEGALS</li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Help Center</a></li>
-                <li><a href="#">Privacy</a></li>
+              <ul className="Mentors" id="contents">
+                <li className="link_name">EXPLORE</li>
+                <li><Link to='/#'>Home</Link></li>
+                <li><Link to='/#'>About</Link></li>
+                <li><Link to='/#'>Team</Link></li>
                 
               
               </ul>
-          <ul class="box" >
-                <li class="link_name">JOIN US</li>
-                <li><a href="https://discord.com/invite/PX7uJCSXPw">Discord</a></li>
-                <li><a href="https://devfolio.co/opencode/dashboard">Devfolio</a></li>
-                <br>
-                <li><a href= " https://opencodeiiita.github.io/"><button id="button"> VISIT US -></button></a></li>
-                
+              <ul className="Mentors" >
+                <li className="link_name">LEGALS</li>
+                <li><Link to='/#'>Contact us</Link></li>
+                <li><Link to='/#'>Team</Link></li>
+                <li><Link to='/#'>Privacy</Link></li>
               </ul>
-          
-          
-         
-          
+          <ul className="Mentors" >                                
+                <li className="link_name">JOIN US</li>
+                <li><Link to='/https://discord.com/invite/PX7uJCSXPw'>Discord</Link></li>
+                <li><Link to='/https://devfolio.co/opencode/dashboard'>Discord</Link></li>
+                <br/>
+                <li><Link to='/https://opencodeiiita.github.io/'><button id="button"> VISIT US </button></Link></li>
+              </ul> 
             </div>
           </div>
-          
-               <hr/>
-               <hr/>
-              <div class="bottom-details">
-              <div class="bottom_text">
-                <span class="copyright_text">Copyright©2021 <a href="https://geek-editor-frontend.herokuapp.com/compiler">Geek Editor.</a></span>
-                <span class="policy_terms">
-                  <img src="Logo_GEF.png" height="55", alt="Logo"></img>
+          <hr/>
+              <div className="bottom-details">
+              <div className="bottom_text">
+                <span className="copyright_text">Copyright©2021 <Link to='/https://geek-editor-frontend.herokuapp.com/compiler'>Geek Editor.</Link> </span>
+                <span className="policy_terms">                
+                  <img src="../assets/images/Logo.png" height="100" alt="Logo"/>
                 </span>
               </div>
             </div>

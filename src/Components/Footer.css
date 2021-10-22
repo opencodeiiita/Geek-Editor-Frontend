@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 footer{
-  position: fixed;
+  
   background: #010140;
   width: 100%;
-  height: 52rem;
+  
   bottom: 0;
   left: 0;
 }
@@ -59,17 +59,17 @@ justify-content: space-between;
 
 
 }
-footer .content .link-boxes .box{
+footer .content .link-boxes .Mentors{
   width: calc(100% - 80px);
 }
-.content .link-boxes .box .link_name{
+.content .link-boxes .Mentors .link_name{
   color: #B8B8CA;
   font-size: 25px;
   font-weight: 400;
   margin-bottom: 10px;
   position: relative;
 }
-.link-boxes .box .link_name::before{
+.link-boxes .Mentors .link_name::before{
   content: '';
   position: absolute;
   left: 0;
@@ -78,11 +78,11 @@ footer .content .link-boxes .box{
   width: 35px;
   background: #B8B8CA;
 }
-.content .link-boxes .box li{
+.content .link-boxes .Mentors li{
   margin: 6px 0;
   list-style: none;
 }
-.content .link-boxes .box li a{
+.content .link-boxes .Mentors li a{
   color: #B8B8CA;
   font-size: 15px;
   font-weight: 400;
@@ -90,7 +90,7 @@ footer .content .link-boxes .box{
   opacity: 0.8;
   transition: all 0.4s ease
 }
-.content .link-boxes .box li a:hover{
+.content .link-boxes .Mentors li a:hover{
   opacity: 1;
   text-decoration: underline;
 }
@@ -124,14 +124,14 @@ footer .bottom-details .bottom_text{
   margin-right: 10px;
 }
 
-footer .content .link-boxes .box{
+footer .content .link-boxes .Mentors{
   width: calc(100% - 100px);
 }
-#box1{
-  margin-left: 520px;
+#Email{
+  margin-right: 520px;
 }
-#box2{
-  margin-top: 80px;
+#Contents{
+  margin-left: 80px;
   
 }
 #c1{
