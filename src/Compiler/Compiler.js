@@ -32,6 +32,19 @@ export default class Compiler extends Component {
                     element.removeChild(element.lastElementChild);
             }
         }
+        if (evt.key === 'Tab') {
+            evt.preventDefault();
+            let ele = document.getElementById("source");
+            let start = ele.selectionStart;
+            let end = ele.selectionEnd;
+            // If tab spaces are wanted
+            // ele.value = ele.value.substring(0, start) + "\t" + ele.value.substring(end);
+            // If 4 spaces are wanted
+            ele.value = ele.value.substring(0, start) + "    " + ele.value.substring(end);
+            // put caret at right position again
+            ele.selectionStart =
+            ele.selectionEnd = start + 4;
+        }
     }
 
     /* 1.Write Code here for taking value of input, language_id, user_input from local storage*/
