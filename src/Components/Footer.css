@@ -26,7 +26,6 @@ footer .content .top{
   text-align: center;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 60px;
 }
 .content .top .logo-details .logo_name{
   color: #B8B8CA;
@@ -38,8 +37,9 @@ footer .content .top{
 }
 
 .content .top .media-icons{
-  display: inline-block;
+  display: flex;
   justify-content: center;
+  gap: 20px;
 }
 .content .top .media-icons a{
   height: 40px;
@@ -50,24 +50,26 @@ footer .content .top{
   line-height: 40px;
   color: #B8B8CA; 
   font-size: 17px;
+  
 
 }
 footer .content .link-boxes{
   width: 100%;
   display: flex;
-justify-content: space-between;
-
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
 
 }
-footer .content .link-boxes .Mentors{
-  width: calc(100% - 80px);
-}
+
 .content .link-boxes .Mentors .link_name{
   color: #B8B8CA;
   font-size: 25px;
   font-weight: 400;
   margin-bottom: 10px;
   position: relative;
+  display: flex;
 }
 .link-boxes .Mentors .link_name::before{
   content: '';
@@ -77,6 +79,7 @@ footer .content .link-boxes .Mentors{
   height: 2px;
   width: 35px;
   background: #B8B8CA;
+  
 }
 .content .link-boxes .Mentors li{
   margin: 6px 0;
@@ -94,7 +97,9 @@ footer .content .link-boxes .Mentors{
   opacity: 1;
   text-decoration: underline;
 }
-
+.contact-flex > div{
+  color: #B8B8CA;
+}
 
 footer .bottom-details{
   width: 100%;
@@ -124,27 +129,48 @@ footer .bottom-details .bottom_text{
   margin-right: 10px;
 }
 
-footer .content .link-boxes .Mentors{
-  width: calc(100% - 100px);
-}
-#Email{
-  margin-right: 520px;
-}
-#Contents{
-  margin-left: 80px;
-  
-}
-#c1{
-  font-size: 18px;
-}
+
 #button{
   cursor: pointer;
-        border: 1px solid #3498db;
-        background-color: transparent;
-        height: 40px;
-        width: 150px;
-        color: #3498db;
-        font-size: 1em;
-        box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
-        border-radius: 8px;
+  border: 1px solid #3498db;
+  background-color: transparent;
+  height: 40px;
+  width: 100px;
+  color: #3498db;
+  font-size: 1em;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+}
+.contact-flex{
+  display:flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.explore{
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+#Email{
+  padding: 0;
+}
+hr.line{
+  margin: 20px auto;
+  width: 60%;
+}
+
+@media (max-width:720px){
+  footer .content .link-boxes{
+    flex-direction: column-reverse;
+
+  }
+  #Email{
+    text-align: center;
+  }
+
+}
+@media (max-width:720px){
+  .content .link-boxes .Mentors .link_name{
+    font-size:15px ;
+  }
 }

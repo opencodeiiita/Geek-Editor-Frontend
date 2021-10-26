@@ -25,42 +25,52 @@ const Footer = (props) => {
               <div className="media-icons">
                 <img src="../assets/images/Facebook.png" src={Facebook}/>
                 <img src="../assets/images/Twitter.png" src={Twitter}/>
-                <img src="../assets/images/Github.png" src={Git}/>
-                
-                
-              </div>
+                <img src="../assets/images/Github.png" src={Git}/>                
+              </div> 
             </div>
+            <hr className="line"/>
             <div className="link-boxes">
+            
               <ul className="Mentors" id="Email" >
-                <li className="link_name" id="c1">CONTACT US :</li>
-                <div><li><Link to='#'>Priyal Saxena : iec2020123@iiita.ac.in</Link></li></div>
-                <hr/>
-                <div><li><Link to='#'>Mudit Agarwal : iit2020092@iiita.ac.in</Link></li></div>
-                <hr/>
-                <div><li><Link to='/#'>Akshaj Kansal : iit2020245@iiita.ac.in</Link></li></div>
-                
+                <li className="link_name">CONTACT US :</li>
+                <div className="contact-flex">
+                <div>
+                <div>Priyal Saxena</div> 
+                <div>iec2020123@iiita.ac.in</div>
+                </div>
+                <div>
+                <div>Mudit Agarwal</div> 
+                <div>iit2020092@iiita.ac.in</div>
+                </div>
+                <div>
+                <p>Akshaj Kansal</p> 
+                <p>iit2020245@iiita.ac.in</p>
+                </div>
+                </div>
               </ul>
-              <ul className="Mentors" id="contents">
+              <div className="explore">
+              <div className="Mentors" id="contents">
                 <li className="link_name">EXPLORE</li>
                 <li><Link to='/#'>Home</Link></li>
                 <li><Link to='/#'>About</Link></li>
                 <li><Link to='/#'>Team</Link></li>
                 
               
-              </ul>
-              <ul className="Mentors" >
+              </div>
+              <div className="Mentors" >
                 <li className="link_name">LEGALS</li>
                 <li><Link to='/#'>Contact us</Link></li>
                 <li><Link to='/#'>Team</Link></li>
                 <li><Link to='/#'>Privacy</Link></li>
-              </ul>
-          <ul className="Mentors" >                                
+              </div>
+          <div className="Mentors" >                                
                 <li className="link_name">JOIN US</li>
                 <li><Link to='/https://discord.com/invite/PX7uJCSXPw'>Discord</Link></li>
-                <li><Link to='/https://devfolio.co/opencode/dashboard'>Discord</Link></li>
-                <br/>
-                <li><Link to='/https://opencodeiiita.github.io/'><button id="button"> VISIT US </button></Link></li>
-              </ul> 
+                <li><Link to='/https://devfolio.co/opencode/dashboard'>DevFolio</Link></li>
+                <li><Link to='/https://opencodeiiita.github.io/'>VISIT US</Link></li>
+            </div> 
+              </div>
+              
             </div>
           </div>
           <hr/>
