@@ -16,19 +16,14 @@ const Footer = (props) => {
               <div className="logo-details">
                 <h1 className="logo_name">OpenCode'21</h1>
               <br/>
-              <br/>
-                <p className="para">A month-long program starting in October for students to start their journey in the world of open source.
-                  The Only requirement being an enthusiastic heart to learn.</p>
               </div>
-              <br/>
-              <br/>
               <div className="media-icons">
                 <img src="../assets/images/Facebook.png" src={Facebook}/>
                 <img src="../assets/images/Twitter.png" src={Twitter}/>
                 <img src="../assets/images/Github.png" src={Git}/>                
               </div> 
             </div>
-            <hr className="line"/>
+            
             <div className="link-boxes">
             
               <ul className="Mentors" id="Email" >
@@ -72,16 +67,10 @@ const Footer = (props) => {
               </div>
               
             </div>
+            <br/>
+            <div className="copyright_text">Copyright©2021 Geek Editor</div>
           </div>
-          <hr/>
-              <div className="bottom-details">
-              <div className="bottom_text">
-                <span className="copyright_text">Copyright©2021 <Link to='/https://geek-editor-frontend.herokuapp.com/compiler'>Geek Editor.</Link> </span>
-                <span className="policy_terms">                
-                  <img src={logo} height="55" alt="Logo"/>
-                </span>
-              </div>
-            </div>
+              
         </footer>
         
     );
