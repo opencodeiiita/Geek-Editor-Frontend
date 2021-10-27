@@ -18,9 +18,9 @@ const Footer = (props) => {
               <br/>
               </div>
               <div className="media-icons">
-                <img src="../assets/images/Facebook.png" src={Facebook}/>
-                <img src="../assets/images/Twitter.png" src={Twitter}/>
-                <img src="../assets/images/Github.png" src={Git}/>                
+                <img src="../assets/images/Facebook.png" src={Facebook} alt='facebook logo'/>
+                <img src="../assets/images/Twitter.png" src={Twitter} alt='twitter logo'/>
+                <img src="../assets/images/Github.png" src={Git} alt='github logo'/>                
               </div> 
             </div>
             
