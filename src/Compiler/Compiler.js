@@ -16,6 +16,15 @@ export default class Compiler extends Component {
         this.myRef = React.createRef();
     }
 
+    componentDidMount() {
+        const accessToken = localStorage.getItem('accessToken');
+        const refreshToken = localStorage.getItem('refreshToken');
+
+        if ((accessToken == null || accessToken == undefined) && (refreshToken == null || refreshToken == undefined)) {
+            window.location.href='/';
+        }
+    }
+
     handleKeyDown(evt) {
         if (evt.keyCode === 13) {
             console.log("ok");
