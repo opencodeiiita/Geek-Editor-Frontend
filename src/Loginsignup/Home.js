@@ -1,4 +1,4 @@
-import React, { useState , useContext } from 'react';
+import React, { useState , useContext, useEffect } from 'react';
 import axios from "axios";
 import "./Home.css";
 
@@ -15,6 +15,15 @@ const LogSign = () => {
     const [userNameSignup, setUserNameSignup] = useState();
     const [emailSignup, setEmailSignup] = useState();
     const [passwordSignup, setPasswordSignup] = useState();
+
+    useEffect(() => {
+        const accessToken = localStorage.getItem('accessToken');
+        const refreshToken = localStorage.getItem('refreshToken');
+
+        if ((accessToken != null || accessToken != undefined) && (refreshToken != null || refreshToken != undefined)) {
+            window.location.href='/compiler';
+        }
+    })
 
     async function signupSubmit(e) {
         e.preventDefault();
