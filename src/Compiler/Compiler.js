@@ -27,22 +27,23 @@ export default class Compiler extends Component {
 
     handleKeyDown(evt) {
         if (evt.keyCode === 13) {
-            console.log("ok");
-            var element = this.myRef.current;
-            var next = document.createElement("li");
+            console.log("enter key was pressed");
+            let element = this.myRef.current;
+            let next = document.createElement("li");
             element.appendChild(next);
         }
         if (evt.keyCode === 8) {
-            console.log("ok");
-            var ele = document.getElementById("source");
+            console.log("backspace key was pressed");
+            let ele = document.getElementById("source");
             if (ele.value.endsWith("\n")) {
-                var element = this.myRef.current;
+                let element = this.myRef.current;
                 if (element.lastElementChild)
                     element.removeChild(element.lastElementChild);
             }
         }
         if (evt.key === 'Tab') {
             evt.preventDefault();
+            console.log("tab key was pressed");
             let ele = document.getElementById("source");
             let start = ele.selectionStart;
             let end = ele.selectionEnd;
@@ -57,19 +58,102 @@ export default class Compiler extends Component {
     }
 
     /* 1.Write Code here for taking value of input, language_id, user_input from local storage*/
+    input = (event) => {
+		event.preventDefault();
+        // console.log(event.target.value);
+		this.setState({ "input": event.target.value });
+		localStorage.setItem("input", event.target.value)
+	 
+	  };
+	  userInput = (event) => {
+		event.preventDefault();
+		this.setState({ user_input: event.target.value });
+	  };
+	  language = (event) => {
+	   
+		event.preventDefault();
+	   
+		this.setState({ language_id: event.target.value });
+		localStorage.setItem('language_Id',event.target.value)
+	   
+	  };
+	
+	  submit = async (e) => {
+		e.preventDefault();
+	
+		let outputText = document.getElementById("output");
+		outputText.innerHTML = "";
+		outputText.innerHTML += "Creating Submission ...\n";
+		const response = await fetch(
+		  "https://judge0-ce.p.rapidapi.com/submissions",
+		  {
+			method: "POST",
+			headers: {
+			  "x-rapidapi-host": "judge0-ce.p.rapidapi.com",
+			  "x-rapidapi-key": "f462781fd4msh8367cb31ee5140ap15f051jsncb0ebb1b8e24", // Get yours for free at https://rapidapi.com/judge0-official/api/judge0-ce/
+			  "content-type": "application/json",
+			  accept: "application/json",
+			},
+			body: JSON.stringify({
+			  source_code: this.state.input,
+			  stdin: this.state.user_input,
+			  language_id: this.state.language_id,
+			}),
+		  }
+		);
+		outputText.innerHTML += "Submission Created ...\n";
+		const jsonResponse = await response.json();
+        // console.log("input",jsonResponse);
+	
+		let jsonGetSolution = {
+		  status: { description: "Queue" },
+		  stderr: null,
+		  compile_output: null,
+		};
+	
+		while (
+		  jsonGetSolution.status.description !== "Accepted" &&
+		  jsonGetSolution.stderr == null &&
+		  jsonGetSolution.compile_output == null
+		) {
+		  outputText.innerHTML = `Creating Submission ... \nSubmission Created ...\nChecking Submission Status\nstatus : ${jsonGetSolution.status.description}`;
+		  if (jsonResponse.token) {
+			let url = `https://judge0-ce.p.rapidapi.com/submissions/${jsonResponse.token}?base64_encoded=true`;
+	
+			const getSolution = await fetch(url, {
+			  method: "GET",
+			  headers: {
+				"x-rapidapi-host": "judge0-ce.p.rapidapi.com",
+				"x-rapidapi-key": "f462781fd4msh8367cb31ee5140ap15f051jsncb0ebb1b8e24", // Get yours for free at https://rapidapi.com/judge0-official/api/judge0-ce/
+				"content-type": "application/json",
+			  },
+			});
+	
+			jsonGetSolution = await getSolution.json();
+            // console.log("output",jsonGetSolution);
 
-    submit = async (e) => {
-        e.preventDefault();
-        let outputText = document.getElementsById("output");
-        outputText.innerHTML = "";
-        outputText.innerHTML += "Creating Submission ...\n";
-        /* 2. Write Code for creating submission here */
-
-        outputText.innerHTML += "Submission Created ...\n";
-        /* 3. Write Code for getting a submission here */
-
-        /* 4. Write Code for getting errors or displaying submissison here */
-    };
+		  }
+		}
+		if (jsonGetSolution.stdout) {
+		  const output = atob(jsonGetSolution.stdout);
+	
+		  outputText.innerHTML = "";
+	
+		  outputText.innerHTML += `Output :\n${output}\nExecution Time : ${jsonGetSolution.time} Secs\nMemory used : ${jsonGetSolution.memory} bytes`;
+		} else if (jsonGetSolution.stderr) {
+		  const error = atob(jsonGetSolution.stderr);
+	
+		  outputText.innerHTML = "";
+	
+		  outputText.innerHTML += `\n Error :${error}`;
+		} else {
+		  const compilation_error = atob(jsonGetSolution.compile_output);
+	
+		  outputText.innerHTML = "";
+	
+		  outputText.innerHTML += `\n Error :${compilation_error}`;
+		}
+	  };
 
     render() {
         let mode = this.props.mode;
@@ -98,9 +182,9 @@ export default class Compiler extends Component {
                                                 required
                                                 name="solution"
                                                 id="source"
-                                                // onChange={this.input}
+                                                onChange={this.input}
                                                 className={`${mode}-text source col1`}
-                                                // value={this.state.input}
+                                                value={this.state.input}
                                                 placeholder="Enter code here :)"
                                                 onKeyDown={this.handleKeyDown.bind(
                                                     this
@@ -131,7 +215,7 @@ export default class Compiler extends Component {
                                                 </option>
                                             </select>
                                         </div>
-                                        <button class="button-run">RUN</button>
+                                        <button className="button-run" onClick={this.submit}>RUN</button>
                                     </div>
                                 </div>
                             </div>
@@ -161,11 +245,11 @@ export default class Compiler extends Component {
                                         </div>
                                     </div>
                                     <textarea
-                                        readonly
+                                        // readOnly
                                         id="output"
                                         className={`Output ${mode}-text ${mode}-textarea`}
                                         placeholder="Output will be displayed here"
-                                        readOnly="false"
+                                        readOnly={true}
                                     ></textarea>
                                 </div>
                             </div>
