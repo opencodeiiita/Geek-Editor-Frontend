@@ -26,7 +26,7 @@ const Navbar = (props) => {
             
             <div  className={`navbar ${mode}`}>
                 <div className="logo">
-                    <img className="logoImg" src={logo} alt="Logo" />
+                    <img className="logoImg" src={logo} alt="geek editor logo" />
 
                 </div>
                 

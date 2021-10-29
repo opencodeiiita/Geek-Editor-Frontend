@@ -216,7 +216,7 @@ form {
     right: 0;
     background-size: cover;
     transform: translateX(0);
-    background-image: url("");
+    /* background-image: url(""); */
     background-blend-mode: lighten;
 }
 

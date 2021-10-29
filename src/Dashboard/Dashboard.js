@@ -18,7 +18,7 @@ const Dashboard = (props) => {
                                 <img
                                     className="img1"
                                     src="https://avatars2.githubusercontent.com/u/10188746?s=460&u=ebd07b3fe70fbaf057d8305f7e611d70be2448e1&v=4"
-                                    alt=""
+                                    alt="profile image"
                                 />
                             </div>
                             <div className="info">

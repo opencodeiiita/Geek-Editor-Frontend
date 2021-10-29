@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+footer{
+  
+  background: #010140;
+  width: 100%;
+  
+  bottom: 0;
+  left: 0;
+}
+footer::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 100px;
+  height: 1px;
+  width: 100%;
+  background: #010140;
+}
+footer .content{
+  max-width: 1250px;
+  margin: auto;
+  padding: 30px 40px 40px 40px;
+}
+footer .content .top{
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.content .top .logo-details .logo_name{
+  color: #B8B8CA;
+  font-size: 2rem;
+}
+.content .top .logo-details .para{
+  color: #B8B8CA;
+  font-size: 1.6rem;
+}
+
+.content .top .media-icons{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.content .top .media-icons a{
+  height: 40px;
+  width: 40px;
+  margin: 0 8px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  color: #B8B8CA; 
+  font-size: 17px;
+  
+
+}
+footer .content .link-boxes{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+
+}
+
+.content .link-boxes .Mentors .link_name{
+  color: #B8B8CA;
+  font-size: 25px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  position: relative;
+  display: flex;
+}
+.link-boxes .Mentors .link_name::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 35px;
+  background: #B8B8CA;
+  
+}
+.content .link-boxes .Mentors li{
+  margin: 6px 0;
+  list-style: none;
+}
+.content .link-boxes .Mentors li a{
+  color: #B8B8CA;
+  font-size: 15px;
+  font-weight: 400;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: all 0.4s ease
+}
+.content .link-boxes .Mentors li a:hover{
+  opacity: 1;
+  text-decoration: underline;
+}
+.contact-flex > div{
+  color: #B8B8CA;
+}
+
+footer .bottom-details{
+  width: 100%;
+background: #010140;
+
+}
+footer .bottom-details .bottom_text{
+  max-width: 1250px;
+  margin: auto;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.bottom-details .bottom_text span,
+.bottom-details .bottom_text a{
+  font-size: 14px;
+  font-weight: 300;
+  color: #fff;
+  opacity: 0.8;
+  text-decoration: none;
+}
+.bottom-details .bottom_text a:hover{
+  opacity: 1;
+  text-decoration: underline;
+}
+.bottom-details .bottom_text a{
+  margin-right: 10px;
+}
+
+
+#button{
+  cursor: pointer;
+  border: 1px solid #3498db;
+  background-color: transparent;
+  height: 40px;
+  width: 100px;
+  color: #3498db;
+  font-size: 1em;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+}
+.contact-flex{
+  display:flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.explore{
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+#Email{
+  padding: 0;
+}
+hr.line{
+  margin: 10px auto;
+  width: 30%;
+  background-color:#B8B8CA ;
+  color:B8B8CA;
+}
+
+@media (max-width:720px){
+  footer .content .link-boxes{
+    flex-direction: column-reverse;
+
+  }
+  #Email{
+    text-align: center;
+  }
+
+}
+@media (max-width:720px){
+  .content .link-boxes .Mentors .link_name{
+    font-size:15px ;
+  }
+}
+.copyright_text{
+  text-align: center;
+  color: rgb(213, 201, 228);
+  ;
+}
