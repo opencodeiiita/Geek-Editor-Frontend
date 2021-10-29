@@ -3,12 +3,14 @@ import React, { useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 // Components
-import Home from "./Loginsignup/Home";
-import User from "./Components/User";
-import Compiler from "./Compiler/Compiler";
-import Dashboard from "./Dashboard/Dashboard";
-import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
+const Compiler = React.lazy(() => import("./Compiler/Compiler"))
+const Home = React.lazy(() => import("./Loginsignup/Home"))
+const User = React.lazy(() => import("./Components/User"))
+const Dashboard = React.lazy(() => import("./Dashboard/Dashboard"))
+const Navbar = React.lazy(() => import("./Components/Navbar"))
+const Footer = React.lazy(() => import("./Components/Footer"))
+
+
 export default function App() {
     const [check, setCheck] = useState('0');
     let [mode, setMode] = useState('light');
