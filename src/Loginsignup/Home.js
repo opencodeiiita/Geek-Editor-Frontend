@@ -81,12 +81,10 @@ const LogSign = () => {
     
     const [signupShow, setSignupShow] = useState(0);
     function signupButton() {
-        if(isUserNameValid(userNameSignup)) {
-            console.log(1^signupShow);
-            setSignupShow(1 - setSignupShow);
-            console.log(1^signupShow);
+        if (signupShow) {
+            setSignupShow(0)
         } else {
-            alert('Enter a valid Username!');
+            setSignupShow(1);
         }
     }
 
