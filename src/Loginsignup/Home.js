@@ -1,6 +1,11 @@
-import React, { useState , useContext } from 'react';
+import React, { useState , useContext, useEffect } from 'react';
 import axios from "axios";
 import "./Home.css";
+
+function updateLocalStorage(tokens) {
+    localStorage.setItem('accessToken', tokens.accessToken)
+    localStorage.setItem('refreshToken', tokens.refreshToken)
+}
 
 const LogSign = () => {
 
@@ -11,7 +16,17 @@ const LogSign = () => {
     const [emailSignup, setEmailSignup] = useState();
     const [passwordSignup, setPasswordSignup] = useState();
 
-    function signupSubmit() {
+    useEffect(() => {
+        const accessToken = localStorage.getItem('accessToken');
+        const refreshToken = localStorage.getItem('refreshToken');
+
+        if ((accessToken != null || accessToken != undefined) && (refreshToken != null || refreshToken != undefined)) {
+            window.location.href='/compiler';
+        }
+    })
+
+    async function signupSubmit(e) {
+        e.preventDefault();
         const body = {
             fname: fNameSignup,
             lname: lNameSignup,
@@ -19,6 +34,16 @@ const LogSign = () => {
             email: emailSignup,
             password: passwordSignup,
         };  
+        try {
+            const res = await axios.post('http://localhost:8000/user/register/', body)
+            console.log(res)
+            if (res.data.success) {
+                alert('User Successfully Registered, Login to continue')
+            }
+        } catch (err) {
+            console.log(err)
+            alert('Some error occured');
+        }
     }
 
     //login
@@ -26,10 +51,25 @@ const LogSign = () => {
     const [userNameSignin, setUserNameSignin] = useState();
     const [passwordSignin, setPasswordSignin] = useState();
 
-    async function signinSubmit() {
+    async function signinSubmit(e) {
+        e.preventDefault()
         const body = { 
-            username: userNameSignin,
+            email: userNameSignin,
             password: passwordSignin,
+        }
+        try {
+            const res = await axios.post('http://localhost:8000/user/login/', body)
+            console.log(res)
+            if (res.data.success) {
+                const len = res.data.data.tokens.length;
+                const accessToken = res.data.data.tokens[len-2].token;
+                const refreshToken = res.data.data.tokens[len-1].refToken;
+                updateLocalStorage({accessToken, refreshToken});
+                window.location.href='/compiler'
+            }
+        } catch (err) {
+            console.log(err)
+            alert('Some error occured');
         }
     };
     
@@ -41,12 +81,10 @@ const LogSign = () => {
     
     const [signupShow, setSignupShow] = useState(0);
     function signupButton() {
-        if(isUserNameValid(userNameSignup)) {
-            console.log(1^signupShow);
-            setSignupShow(1 - setSignupShow);
-            console.log(1^signupShow);
+        if (signupShow) {
+            setSignupShow(0)
         } else {
-            alert('Enter a valid Username!');
+            setSignupShow(1);
         }
     }
 
@@ -57,14 +95,14 @@ const LogSign = () => {
         <div className="full">
             <div className={ signupShow === 0 ? "container" : "container right-panel-active"} id="container">
                 <div className={`form-container sign-up-container a1`}>
-                    <form action="/">
+                    <form>
                     <h1 className="h1">Create Account</h1>
                     <input className="input" required id="name_signup" type="text" placeholder="First Name" onChange={(e) => setFNameSignup(e.target.value)}/>
                     <input className="input" required id="name_signup" type="text" placeholder="Last Name" onChange={(e) => setLNameSignup(e.target.value)}/>
                     <input className="input" required id="name_signup" type="text" placeholder="User Name" onChange={(e) => setUserNameSignup(e.target.value)}/>
                     <input className="input" required id="email_signup" type="email" placeholder="Email" onChange={(e) => setEmailSignup(e.target.value)}/>
                     <input className="input" required id="password_signup" type="password" placeholder="Password" onChange={(e) => setPasswordSignup(e.target.value)}/>
-                    <button className="button" onClick={signupSubmit}>
+                    <button className="button" type="submit" onClick={signupSubmit}>
                         Sign Up
                     </button>
                     </form>
@@ -77,7 +115,7 @@ const LogSign = () => {
                     <a className="a" href="#">
                         Forgot your password?
                     </a>
-                    <button className="button" onClick={signinSubmit} href="/compiler">
+                    <button className="button" onClick={signinSubmit}>
                         Sign In
                     </button>
                     </form>
