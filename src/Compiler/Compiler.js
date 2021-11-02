@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./Compiler.css";
 import { ScrollSync, ScrollSyncPane } from "react-scroll-sync";
+import axios from 'axios'
+import { languages } from "prismjs";
 
 require("dotenv").config();
 
@@ -80,6 +82,37 @@ export default class Compiler extends Component {
 	
 	  submit = async (e) => {
 		e.preventDefault();
+
+        let language;
+        switch(this.state.language_id) {
+            case '54' : 
+            language = 'C++';
+            break;
+            case '50' : 
+            language = 'C';
+            break;
+            case '62' : 
+            language = 'Java';
+            break;
+            case '71' : 
+            language = 'Python';
+            break;
+        }
+
+        //save code
+        const body = {
+            userId : localStorage.getItem('id'),
+            code : this.state.input,
+            language : language,
+            languageCode : this.state.language_id
+        }
+        const saveRes = await axios.post('http://localhost:8000/code/submitCode/', body)
+        console.log(saveRes)
+        if (saveRes.data.success) {
+            alert('your code has been saved successfully');
+        } else {
+            alert('There was some problem saving your code');
+        }
 	
 		let outputText = document.getElementById("output");
 		outputText.innerHTML = "";
