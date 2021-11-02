@@ -1,8 +1,46 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { AiOutlineLike, AiOutlineRise } from "react-icons/ai";
 import "./Dashboard.css";
 
 const Dashboard = (props) => {
+
+    const [loading, setloading] = useState(false)
+    const [Image, setImage] = useState('')
+
+    useEffect(async() => {
+        setloading(true)
+        const header = {"x-access-token" : localStorage.getItem('token')}
+        await axios.post('http://localhost:8000/user/image', header)
+        .then((res) => {
+            setImage(res.data.data.image)} )
+        .catch((err) => console.log(err))
+        setloading(false)
+    }, [])
+
+    const uploadImage = async e => {
+        const files = e.target.files
+        const data = new FormData()
+        data.append('file',files[0])
+        data.append('upload_preset','mfxkqr6g')
+        setloading(true)
+        let body = data
+        setloading(true)
+        await axios.post(`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_image}/image/upload`,body)
+        .then((res) => {console.log(res.data.secure_url)
+             setImage(res.data.secure_url)})
+        const header = {"x-access-token" : localStorage.getItem('token')}
+        body = {"image": Image}
+        axios.put('http://localhost:8000/user/image',body,header)
+        .then((res) => console.log(res))
+        
+        setloading(false)
+    }
+    if(loading){
+        return (
+            <div>Loading ...</div>
+        )
+    }
     return (
         <>
             <div>
@@ -15,11 +53,12 @@ const Dashboard = (props) => {
                                 target="_blank"
                             >
                                 {" "}
-                                <img
+                                {Image && <img
                                     className="img1"
-                                    src="https://avatars2.githubusercontent.com/u/10188746?s=460&u=ebd07b3fe70fbaf057d8305f7e611d70be2448e1&v=4"
+                                    src={Image}
                                     alt="profile image"
-                                />
+                                />}
+                                <input type="file" onChange={uploadImage} ></input>
                             </div>
                             <div className="info">
                                 <span className="heading headingUsername">
@@ -104,3 +143,4 @@ const Dashboard = (props) => {
 };
 
 export default Dashboard;
+
