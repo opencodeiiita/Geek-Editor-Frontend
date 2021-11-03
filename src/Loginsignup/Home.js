@@ -1,6 +1,9 @@
 import React, { useState , useContext, useEffect } from 'react';
 import axios from "axios";
 import "./Home.css";
+import { ToastContainer } from 'react-toastify';
+import { Toast } from 'react-toastify/dist/components';
+
 
 function updateLocalStorage(tokens) {
     localStorage.setItem('accessToken', tokens.accessToken)
@@ -90,6 +93,16 @@ const LogSign = () => {
         }
     }
 
+    const forgetPassword = async() => {
+        const body = {email: userNameSignin}
+        await axios.post(`http://localhost:8000/user/forgotpassword/`, body)
+        .then((res) => {
+            if(res.status == 200){
+                Toast("Please check your email for instructions");
+            }
+        })
+    }
+
     // console.log(`${'a' + (1^signupShow)}`);
     return (
         <>
@@ -115,7 +128,7 @@ const LogSign = () => {
                     <input className="input" required id="email_signin" type="email" placeholder="Email" onChange={(e) => setUserNameSignin(e.target.value)}/>
                     <input className="input" required id="pass_signin" type="password" placeholder="Password" onChange={(e) => setPasswordSignin(e.target.value)}/>
                     <a className="a" href="#">
-                        Forgot your password?
+                        <button className="button" onClick= {forgetPassword}> Forgot your password? </button>
                     </a>
                     <button className="button" onClick={signinSubmit}>
                         Sign In
@@ -152,7 +165,7 @@ const LogSign = () => {
                 </div>
             </div>
         </div>
-
+    <ToastContainer/>
         </>
     )
 }
