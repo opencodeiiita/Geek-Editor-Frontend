@@ -8,6 +8,7 @@ import { Toast } from 'react-toastify/dist/components';
 function updateLocalStorage(tokens) {
     localStorage.setItem('accessToken', tokens.accessToken)
     localStorage.setItem('refreshToken', tokens.refreshToken)
+    localStorage.setItem('id', tokens.id)
 }
 
 const LogSign = () => {
@@ -67,7 +68,8 @@ const LogSign = () => {
                 const len = res.data.data.tokens.length;
                 const accessToken = res.data.data.tokens[len-2].token;
                 const refreshToken = res.data.data.tokens[len-1].refToken;
-                updateLocalStorage({accessToken, refreshToken});
+                const userID = res.data.data._id;
+                updateLocalStorage({accessToken, refreshToken, id:userID});
                 window.location.href='/compiler'
             }
         } catch (err) {
